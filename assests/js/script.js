@@ -44,20 +44,22 @@ var displayWeather = function (data) {
 
   // temp
   var currentTemprature = data.current.temp;
-  document.getElementById("#current-temp").textContent =
+  document.getElementById("current-temp").textContent =
     "Temprature: " + currentTemprature;
 
   // humidity
   var currentHumidity = data.current.humidity;
-  document.getElementById("#current-humidity").textContent = currentHumidity;
+  document.getElementById("current-humidity").textContent =
+    "Humidity:" + currentHumidity;
 
   // windspeed
   var currentWindspeed = data.current.wind_speed;
-  console.log(currentWindspeed);
+  document.getElementById("current-windspeed").textContent =
+    "Wind Speed:" + currentWindspeed;
 
   // uv index
   var currentUVI = data.current.uvi;
-  console.log(currentUVI);
+  document.getElementById("uv-index").textContent = "UV Index:" + currentUVI;
 };
 
 var citySearch = function () {
