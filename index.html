@@ -4,35 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.css" integrity="sha512-7VGuxKU1BFMmA+dC7NiW8jF0YOIe6bibjUBr42unVtEsI/UYzXMS3nkgNvmsY4yqauxeiEs4bXF6fPLsCuxN/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Weather Dashboard</title>
 </head>
 
 <body>
 
-<header>
-Weather Dashboard
-</header>
+<main>
 
-<main class="flex-row justify-space-between">
-    <div class="col-6 col-md-4">
+  <section class="hero is-small is-primary">
+    <div class="hero-body">
+      <p class="title">
+        Weather Dashboard
+      </p>
+    </div>
+  </section>
+  <!--Search Button & Input-->
+    <div class="column">
       <div class="card">
-        <h3 class="card-header">Search for a City:</h3>
-          <input name="city-name" id="city" type="text" class="input"/>
-          <button type="search" class="btn">Search</button>
+        <h3 class="title is-4">Search for a City:</h3>
+          <input name="city-name" id="city" type="text" class="input is-normal" placeholder="Enter City"/>
+          <button type="search" class="button is-dark">Search</button>
         </form>
       </div>
     </div>
-    
-    <div class="selected-city">
-      <h1 id="current-city"></h1>
-      <h3 id="date"></h3>
+  <!--Choosen city current weather-->
+    <div class="selected-city column is-one-third box">
+      <h1 id="current-city" class="title"></h1>
+      <h3 id="date" class="subtitle"></h3>
       <p id="current-temp"></p>
       <p id="current-humidity"></p>
       <p id="current-windspeed"></p>
       <p id="uv-index"></p>
     </div>
+    <!--Choosen city 5-Day Forecast-->
     <div class="five-day-forcast">
+      <h1 class="5Day"></h1>
+      <div id="DayOne">
+        <h3 id="date1"></h3>
+        <p id="current-temp1"></p>
+        <p id="current-humidity1"></p>
+        <p id="current-windspeed1"></p>
+      </div>
+      <div id="DayTwo">
+        <h3 id="date2"></h3>
+        <p id="current-temp2"></p>
+        <p id="current-humidity2"></p>
+        <p id="current-windspeed2"></p>
+      </div>
+      <div id="DayThree">
+        <h3 id="date3"></h3>
+        <p id="current-temp3"></p>
+        <p id="current-humidity3"></p>
+        <p id="current-windspeed3"></p>
+      </div>
+      <div id="DayFour">
+        <h3 id="date4"></h3>
+        <p id="current-temp4"></p>
+        <p id="current-humidity4"></p>
+        <p id="current-windspeed4"></p>
+      </div>
+      <div id="DayFive">
+        <h3 id="date5"></h3>
+        <p id="current-temp5"></p>
+        <p id="current-humidity5"></p>
+        <p id="current-windspeed5"></p>
+      </div>
     </div>
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>

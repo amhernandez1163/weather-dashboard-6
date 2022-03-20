@@ -1,5 +1,5 @@
 var appId = "9397578e98a8fa54255fac8dbc564411";
-var searchButton = document.querySelector(".btn");
+var searchButton = document.querySelector(".button");
 var cityInput = document.querySelector("#city");
 var currCity = document.querySelector("#current-city");
 
@@ -56,21 +56,61 @@ var displayWeather = function (data) {
   // humidity
   var currentHumidity = data.current.humidity;
   document.getElementById("current-humidity").textContent =
-    "Humidity:" + currentHumidity;
+    "Humidity: " + currentHumidity + "%";
 
   // windspeed
   var currentWindspeed = data.current.wind_speed;
   document.getElementById("current-windspeed").textContent =
-    "Wind Speed:" + currentWindspeed;
+    "Wind Speed: " + currentWindspeed;
 
   // uv index
   var currentUVI = data.current.uvi;
-  document.getElementById("uv-index").textContent = "UV Index:" + currentUVI;
+  document.getElementById("uv-index").textContent = "UV Index: " + currentUVI;
+};
+
+var getForecast = function () {
+  fetch(
+    "http://api.openweathermap.org/geo/1.0/direct?q=" +
+      cityName +
+      "&appid=" +
+      appId
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      var latitude = data[0].lat;
+      var longitude = data[0].lon;
+      return [latitude, longitude];
+    })
+    .then(function (value) {
+      fetch(
+        "api.openweathermap.org/data/2.5/forecast?lat=" +
+          value[0] +
+          "&lon=" +
+          value[1] +
+          "&appid=" +
+          appId +
+          "&units=imperial"
+      );
+    })
+    .then(function (response) {
+      if (response.ok) {
+        response.json().then(function (data) {
+          console.log(data);
+        });
+      }
+    });
 };
 
 var citySearch = function () {
   cityName = cityInput.value;
   getWeather(cityName);
+};
+
+var forecastCity = function () {
+  cityName = cityInput.value;
+  getForecast(cityName);
 };
 
 searchButton.addEventListener("click", citySearch);
