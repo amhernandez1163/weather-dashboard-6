@@ -40,6 +40,12 @@ var getWeather = function () {
 };
 
 var displayWeather = function (data) {
+  //current city
+  var cityDisplay = cityInput.value;
+  document.getElementById("current-city").textContent = cityDisplay;
+  // date
+  var addDate = moment().format("MMMM Do YYYY");
+  document.getElementById("date").textContent = addDate;
   // icon
 
   // temp
