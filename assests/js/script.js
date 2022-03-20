@@ -40,30 +40,24 @@ var getWeather = function () {
 };
 
 var displayWeather = function (data) {
-  var currTemp = document.querySelector("#current-temp");
-  var currHumidity = document.querySelector("#current-humidity");
-  var currWindSpeed = document.querySelector("#current-windspeed");
-  var currUVIndex = document.querySelector("#uv-index");
-
   // icon
 
   // temp
   var currentTemprature = data.current.temp;
-  currTemp.textContent = "Temprature: " + currentTemprature;
+  document.getElementById("#current-temp").textContent =
+    "Temprature: " + currentTemprature;
 
   // humidity
   var currentHumidity = data.current.humidity;
-  console.log(currentHumidity);
+  document.getElementById("#current-humidity").textContent = currentHumidity;
 
   // windspeed
   var currentWindspeed = data.current.wind_speed;
   console.log(currentWindspeed);
+
   // uv index
   var currentUVI = data.current.uvi;
   console.log(currentUVI);
-
-  var currentWeather = document.querySelector(".selected-city");
-  Temp = document.createElement("p");
 };
 
 var citySearch = function () {
