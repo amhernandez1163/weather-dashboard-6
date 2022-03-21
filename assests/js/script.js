@@ -2,6 +2,7 @@ var appId = "9397578e98a8fa54255fac8dbc564411";
 var searchButton = document.querySelector(".button");
 var cityInput = document.querySelector("#city");
 var currCity = document.querySelector("#current-city");
+var cityName = cityInput.value;
 
 var getWeather = function () {
   fetch(
@@ -69,6 +70,7 @@ var displayWeather = function (data) {
 };
 
 var getForecast = function () {
+  console.log("i am running getForecast");
   fetch(
     "http://api.openweathermap.org/geo/1.0/direct?q=" +
       cityName +
@@ -102,6 +104,7 @@ var getForecast = function () {
       }
     });
 };
+getForecast();
 
 var citySearch = function () {
   cityName = cityInput.value;
