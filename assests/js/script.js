@@ -6,7 +6,7 @@ var cityName = cityInput.value;
 
 var getWeather = function () {
   fetch(
-    "http://api.openweathermap.org/geo/1.0/direct?q=" +
+    "https://api.openweathermap.org/geo/1.0/direct?q=" +
       cityName +
       "&appid=" +
       appId
@@ -194,7 +194,9 @@ var citySearch = function () {
 // setting local storage
 localStorage.setItem("city", cityInput.value);
 
+// Event Listener for click to kick off city search function
 searchButton.addEventListener("click", citySearch);
 
+//To Do:
 //1. report UV index that is color coded - conditional logic. if > ___ then style a certain color
 //2. SEARCH HISTORY: add local storage - store name and do another API using that value
