@@ -12,7 +12,7 @@
 <body>
 
 <main>
-
+<!--Header-->
   <section class="hero is-small is-primary">
     <div class="hero-body">
       <p class="title">
@@ -21,6 +21,7 @@
     </div>
   </section>
   <!--Search Button & Input-->
+
     <div class="column">
       <div class="card">
         <h3 class="title is-4">Search for a City:</h3>
@@ -30,7 +31,7 @@
       </div>
     </div>
   <!--Choosen city current weather-->
-    <div class="selected-city column is-one-third box">
+    <div class="selected-city column box">
       <h1 id="current-city" class="title"></h1>
       <h3 id="date" class="subtitle"></h3>
       <p id="current-temp"></p>
@@ -39,39 +40,38 @@
       <p id="uv-index"></p>
     </div>
     <!--Choosen city 5-Day Forecast-->
-    <div class="five-day-forcast">
-      <h1 class="5Day"></h1>
-      <div id="DayOne">
+<div class="columns is-variable">
+      <div id="DayOne" class="column box">
         <h3 id="date1"></h3>
         <p id="current-temp1"></p>
         <p id="current-humidity1"></p>
         <p id="current-windspeed1"></p>
       </div>
-      <div id="DayTwo">
+      <div id="DayTwo" class="column box">
         <h3 id="date2"></h3>
         <p id="current-temp2"></p>
         <p id="current-humidity2"></p>
         <p id="current-windspeed2"></p>
       </div>
-      <div id="DayThree">
+      <div id="DayThree" class="column box">
         <h3 id="date3"></h3>
         <p id="current-temp3"></p>
         <p id="current-humidity3"></p>
         <p id="current-windspeed3"></p>
       </div>
-      <div id="DayFour">
+      <div id="DayFour" class="column box">
         <h3 id="date4"></h3>
         <p id="current-temp4"></p>
         <p id="current-humidity4"></p>
         <p id="current-windspeed4"></p>
       </div>
-      <div id="DayFive">
+      <div id="DayFive" class="column box">
         <h3 id="date5"></h3>
         <p id="current-temp5"></p>
         <p id="current-humidity5"></p>
         <p id="current-windspeed5"></p>
       </div>
-    </div>
+</div>
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="./assests/js/script.js"></script>
